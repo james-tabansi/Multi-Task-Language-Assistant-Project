@@ -35,6 +35,7 @@ task = st.sidebar.selectbox(label='Select task type',
 # define process for text summarization
 #------------------------------------------------------------------------------------------------
 if task == 'Text summarization':
+    st.info("Get concise summary for large text")
     #initialize the model with the right sets of hyper-parameters for text summariation
     params = {'temperature': 0.8}
     model = modelIntializer(params)
@@ -63,6 +64,7 @@ if task == 'Text summarization':
 # define process for sentiment analysis
 #------------------------------------------------------------------------------------------------
 if task == 'Sentiment Analysis':
+    st.info("Get sentiment value for any given text")
     #initialize the model with the right sets of hyper-parameters for text summariation
     params = {'temperature': 0.001, 'max_tokens':2}
     model = modelIntializer(params)
@@ -93,6 +95,7 @@ if task == 'Sentiment Analysis':
 # define process for language translation
 #------------------------------------------------------------------------------------------------
 if task == 'Language translation':
+    st.info('Obtain language translation for any text')
     #initialize the model with the right sets of hyper-parameters for text summariation
     params = {'temperature': 1.0}
     model = modelIntializer(params)
@@ -134,6 +137,7 @@ if task == 'Language translation':
 # define process for Question Answering
 #------------------------------------------------------------------------------------------------
 if task == 'Question answering':
+    st.info('Get answers to your questions')
     #initialize the model with the right sets of hyper-parameters for text summariation
     params = {'temperature': 0.8}
     model = modelIntializer(params)
@@ -162,6 +166,7 @@ if task == 'Question answering':
 # define process for Entity recognition
 #------------------------------------------------------------------------------------------------
 if task == 'Entity recognition':
+    st.info("Extract entities from text")
     #initialize the model with the right sets of hyper-parameters for text summariation
     params = {'temperature': 0.5}
     model = modelIntializer(params)

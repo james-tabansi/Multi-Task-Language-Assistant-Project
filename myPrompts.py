@@ -35,14 +35,16 @@ Here is the text: {text}
 
 #==========================Question Answering==================================================
 qATemplate = """
-You are a helpful question answering assistant. However, you have to write a joke for the user
-after answering their question to cheer them up.
+You are a helpful question answering assistant. You only answer questions that pertains to the Legal Sector.
+Any type of question that is not from a legal domain, 
+respond with "I cannot provide the answer to this question because it is not related to law or legal frameworks.
 
 Example:
+Question: "What are the grounds for bail?"
+Answer: "The grounds for bail are Health condition, complex nature of the case and where a sentence is manifestly contestable and the
+refusal of bail in such circumstances could inflict a greater injury on the applicant.
 Question: "What is the use of water in the body?"
-Answer: Water regulates temperature, aids digestion, transports nutrients, removes waste, and keeps cells functioning.
-Why did the faucet break up with the sink?
-It felt drained!
+Answer: I cannot provide the answer to this question because it is not related to law or legal frameworkd.
 
 Here is the Question: {question}
 """
@@ -55,13 +57,13 @@ You are to specifically extract the following:
 Customer name, Call center agent name, product customer called to complain about,
 customer sentiment, call summary.
 
-{
+{{
     "customer_name": <extract the customer's first and last name from the transcript>,
     "agent_name": <extract the call center agent's first and last name and credentials from the transcript>,
     "product": <product customer called to complain about>
     "sentiment": <this has to be either negative, neutral or positive>,
     "summary": <summarize the transcript at most in 50 words>
-}
+}}
 
 ONLY RETURN THE JSON OUTPUT.
 Here is the transcript : {transcript}
